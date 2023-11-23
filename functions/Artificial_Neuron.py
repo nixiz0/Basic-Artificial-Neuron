@@ -47,7 +47,7 @@ def artificial_neuron(X, y, lr, n_iter):
 #<--Display Function for Evaluation-->
 def display_artificial_neuron(X, y, lr, n_iter):    
     # Training the neural network
-    trained_params = artificial_neuron(X, y, lr=1, n_iter=100)
+    trained_params = artificial_neuron(X, y, lr, n_iter)
 
     # Prediction for XOR data
     predictions = predict(X, *trained_params)
