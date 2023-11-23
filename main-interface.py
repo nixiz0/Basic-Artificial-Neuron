@@ -49,11 +49,11 @@ root = tk.Tk()
 root.title("Main Interface")
 
 # Minimum and maximum window size
-root.minsize(200, 150)
-root.maxsize(300, 180)
+root.minsize(240, 220)
+root.maxsize(270, 250)
 
 # Configuring the size of the main window
-root.geometry("250x160")
+root.geometry("250x230")
 
 # Change background color of the main window
 root.configure(bg='#333333')
@@ -65,13 +65,24 @@ center_window(root)
 style = ttk.Style()
 style.configure('Custom.TButton', font=('Inter', 16, 'bold'), foreground='#001d3d', background='#023e8a')
 
+# Load and resize images for buttons
+image_artificial_neuron = load_and_resize_image('ressources/neuron.png', 55, 55)
+image_MLP = load_and_resize_image('ressources/MLP.png', 55, 55)
+
+# Create labels to display the images
+label_artificial_neuron = tk.Label(root, image=image_artificial_neuron, bg='#333333')
+label_artificial_neuron.pack(pady=(0, 5)) 
+
 # Creation of the button for the "Artificial Neuron" interface with custom style
 btn_artificial_neuron = ttk.Button(root, text="Artificial Neuron", command=open_artificial_neuron, style='Custom.TButton')
-btn_artificial_neuron.pack(pady=20)
+btn_artificial_neuron.pack(pady=(0, 5))
+
+label_MLP = tk.Label(root, image=image_MLP, bg='#333333')
+label_MLP.pack(pady=(0, 5))
 
 # Creation of the button for the "MLP" interface with the custom style
 btn_MLP = ttk.Button(root, text="MLP", command=open_MLP, style='Custom.TButton')
-btn_MLP.pack(pady=5)
+btn_MLP.pack(pady=(0, 5))
 
 # Launching the main interface loop
 root.mainloop()
